@@ -74,6 +74,20 @@ section {
   min-width: 250px;
 }
 
+.details .info-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.details .info-cards div {
+  background: linear-gradient(135deg, #ffefd5, #ffe4b5);
+  padding: 1.5rem;
+  border-radius: 10px;
+  flex: 1;
+  min-width: 250px;
+  
 .rsvp form {
   display: flex;
   flex-direction: column;
