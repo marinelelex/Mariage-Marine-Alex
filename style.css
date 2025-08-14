@@ -40,10 +40,10 @@ h1, h2, h3 {
 
 .btn {
   margin-top: 1.5rem;
-  padding: 0.8rem 1.5rem;
+  padding: 1rem 1.5rem;
   background-color: #ff7f50;
   color: white;
-  border-radius: 30px;
+  border-radius: 25px;
   text-decoration: none;
   font-weight: bold;
 }
