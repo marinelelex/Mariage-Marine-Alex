@@ -138,4 +138,116 @@ footer {
   iframe {
     height: 250px;
   }
+  .rsvp-section {
+  background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover no-repeat;
+  padding: 3.5rem 1rem;
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+  margin: 40px auto;
+  max-width: 1000px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.rsvp-section h2 {
+  font-family: 'Pacifico', cursive;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.rsvp-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: auto;
+}
+
+.rsvp-section input,
+.rsvp-section select,
+.rsvp-section textarea {
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+}
+
+.rsvp-section textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.rsvp-section button {
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.rsvp-section button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+footer {
+  background-color: #ffe4b5;
+  padding: 1rem;
+}
+
+@media (max-width: 600px) {
+  .overlay h1 {
+    font-size: 2.5rem;
+  }
+
+  .overlay p {
+    font-size: 2.5rem;
+  }
+
+  .details .info-cards {
+    flex-direction: column;
+  }
+
+  .btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  iframe {
+    height: 250px;
+  }
+
+  .rsvp-section {
+    padding: 2rem 1rem;
+    border-radius: 0;
+    background-position: center top;
+  }
+
+  .rsvp-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .rsvp-section form {
+    width: 100%;
+    gap: 0.8rem;
+  }
+
+  .rsvp-section input,
+  .rsvp-section select,
+  .rsvp-section textarea {
+    font-size: 1rem;
+    padding: 0.7rem;
+  }
+
+  .rsvp-section button {
+    font-size: 1rem;
+    padding: 0.9rem 1.5rem;
+  }
+}
 }
