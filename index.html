@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marine & Alex - Notre Mariage</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="overlay">
+    <h1>🌺 Marine & Alex 🌊</h1>
+    <p>Le 20 juin 2026 – Beaujolais</p>
+    <a href="#infos" class="btn">🍷 En savoir plus</a>
+  </div>
+</header>
+
+<section class="intro">
+  <h2>Notre histoire</h2>
+  <p>De la douceur des vignes du Beaujolais aux lagons turquoise de Polynésie, notre amour vous invite à une célébration inoubliable.</p>
+</section>
+
+<section id="infos" class="details">
+  <h2>Informations</h2>
+  <div class="info-cards">
+    <div>
+      <h3>📍 Mairie</h3>
+      <p>Mairie de Corcelles-en-Beaujolais<br>124 rue de la Mairie, 69220</p>
+    </div>
+    <div>
+      <h3>⛪ Église</h3>
+      <p>Église de Corcelles-en-Beaujolais<br>124 rue de la Mairie, 69220</p>
+    </div>
+    <div>
+      <h3>🎉 Réception</h3>
+      <p>Les Maisons du Bonheur<br>199 Montée du Vivier, 69820 Fleurie</p>
+    </div>
+  </div>
+</section>
+
+<section class="map">
+  <h2>📍 Les lieux du mariage</h2>
+  <div class="map-container">
+    <h3>Mairie</h3>
+    <iframe src="https://www.google.com/maps?q=124+rue+de+la+Mairie,+69220+Corcelles-en-Beaujolais&output=embed" width="100%" height="300" style="border:0;" allowfullscreen></iframe>
+
+    <h3>Église</h3>
+    <iframe src="https://www.google.com/maps?q=124+rue+de+la+Mairie,+69220+Corcelles-en-Beaujolais&output=embed" width="100%" height="300" style="border:0;" allowfullscreen></iframe>
+
+    <h3>Réception</h3>
+    <iframe src="https://www.google.com/maps?q=199+Montée+du+Vivier,+69820+Fleurie&output=embed" width="100%" height="300" style="border:0;" allowfullscreen></iframe>
+  </div>
+</section>
+
+<section id="rsvp" class="rsvp">
+  <h2>🌸 Confirmez votre présence</h2>
+  <form action="https://formspree.io/f/xyzabc" method="POST">
+    <input type="text" name="nom" placeholder="Votre nom" required>
+    <input type="email" name="email" placeholder="Votre email" required>
+    <select name="presence" required>
+      <option value="">-- Je serai présent(e) ? --</option>
+      <option>Oui</option>
+      <option>Non</option>
+    </select>
+    <textarea name="message" placeholder="Message (facultatif)"></textarea>
+    <button type="submit">🌺 Envoyer</button>
+  </form>
+</section>
+
+<footer>
+  <p>Merci de célébrer avec nous entre vignes et lagons 💕</p>
+</footer>
+
+</body>
+</html>
