@@ -34,6 +34,11 @@ h1, h2, h3, h4, h5 {
   line-height: 1.2;
 }
 
+.overlay h5 {
+  font-size: 1rem;
+  line-height: 0.8;
+}
+
 .overlay p {
   font-size: 1.5rem;
 }
