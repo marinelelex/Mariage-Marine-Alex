@@ -1,48 +1,26 @@
-
-/* ==== Thème Jade Contrasté (photo hero naturelle) ====
-   Palette:
-   Jade: #00A86B
-   Jade profond: #0E8F66
-   Jade clair: #E6F7F2
-   Texte principal: #233
-   Blanc cartes/sections: #FFFFFF
-*/
-
-:root {
-  --jade: #00A86B;
-  --jade-deep: #0E8F66;
-  --jade-light: #E6F7F2;
-  --text: #233;
-  --white: #FFFFFF;
-}
-
-/* Base */
-* { box-sizing: border-box; }
 body {
   margin: 0;
   font-family: 'Pacifico', cursive;
-  background-color: var(--jade-light); /* fond global doux */
-  color: var(--text);
+  background-color: #fff8f0;
+  color: #333;
 }
+
 h1, h2, h3, h4, h5 {
   font-family: 'Pacifico', cursive;
-  color: var(--jade-deep);
 }
-a { color: var(--jade-deep); text-decoration: none; }
 
-/* === HERO ===
-   Photo naturelle, aucun filtre vert. Overlay neutre (noir translucide).
-*/
 .hero {
   position: relative;
   height: 100vh;
-  background: url("PhotoSiteMariage.jpg") center center / cover no-repeat;
+  background: url(PhotoSiteMariage.jpg) center center / cover no-repeat;
 }
+
 .overlay {
   position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.45); /* noir translucide pour lisibilité du texte */
-  color: #fff;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.35);
+  color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -50,184 +28,200 @@ a { color: var(--jade-deep); text-decoration: none; }
   text-align: center;
   padding: 1rem;
 }
+
 .overlay h1 {
-  font-size: 3.2rem;
+  font-size: 3.5rem;
   line-height: 1.2;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.35);
-}
-.overlay p {
-  font-size: 1.3rem;
-  max-width: 900px;
-  margin: 0.5rem auto 0;
 }
 
-/* Bouton principal (dans hero et ailleurs) */
+.overlay h5 {
+  font-size: 1rem;
+  line-height: 0.8;
+}
+
+.overlay p {
+  font-size: 1.5rem;
+}
+
 .btn {
   margin-top: 1.5rem;
   padding: 0.8rem 1.5rem;
-  background-color: var(--jade);
-  color: #fff;
+  background-color: #ff7f50;
+  color: white;
   border-radius: 30px;
+  text-decoration: none;
   font-weight: bold;
   border: none;
   cursor: pointer;
-  transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
-  display: inline-block;
-}
-.btn:hover {
-  background-color: var(--jade-deep);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 14px rgba(0,168,107,0.25);
+  transition: background 0.2s;
 }
 
-/* === Sections (intro, details, map, etc.) === */
+.btn:hover {
+  background-color: #ff5a2e;
+}
+
 section {
   padding: 3.5rem 1rem;
-  max-width: 1100px;
-  margin: 2rem auto;
+  max-width: 1000px;
+  margin: auto;
   text-align: center;
-  background-color: var(--white);      /* blanc pour contraste net avec le hero */
-  border-radius: 14px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.08);
-}
-.intro p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  margin: 0 auto;
-  max-width: 900px;
 }
 
-/* === Cartes infos === */
 .details .info-cards {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
-  margin-top: 1rem;
 }
+
 .details .info-cards div {
-  background: linear-gradient(135deg, #ffffff, #f7fffb); /* blanc vers très léger jade */
-  border: 1px solid rgba(0,168,107,0.18);
+  background: linear-gradient(135deg, #ffefd5, #ffe4b5);
   padding: 1.5rem;
-  border-radius: 12px;
-  flex: 1 1 280px;  /* minimum 280px, s’adapte */
-  max-width: 340px;
-  color: var(--text);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.05);
-}
-.details .info-cards h3 {
-  color: var(--jade-deep);
-  margin-top: 0;
+  border-radius: 10px;
+  flex: 1;
+  min-width: 250px;
 }
 
-/* === Cartes Map === */
-.map-container h3 {
-  color: var(--jade-deep);
-  margin: 1.5rem 0 0.5rem;
-}
-.map iframe {
-  border: 0;
-  width: 100%;
-  height: 320px;
-  border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
-}
-
-/* === Formulaires RSVP === */
-.rsvp-section {
-  background: radial-gradient(120% 120% at 20% 10%, #18b789 0%, var(--jade-deep) 60%, #066c4e 100%);
-  padding: 3.5rem 1rem;
-  border-radius: 20px;
-  color: #fff;
-  text-align: center;
-  margin: 40px auto;
-  max-width: 1100px;
-  box-shadow: 0 12px 24px rgba(0,0,0,0.25);
-}
-.rsvp-section h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.35);
-}
-.rsvp-section .rsvp {
+.rsvp form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  max-width: 520px;
+  max-width: 400px;
   margin: auto;
 }
+
+input, select, textarea, button {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+button {
+  background-color: #20b2aa;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background-color: #1a928f;
+}
+
+footer {
+  background-color: #ffe4b5;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* RSVP Section style */
+.rsvp-section {
+  background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover no-repeat;
+  padding: 3.5rem 1rem;
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+  margin: 40px auto;
+  max-width: 1000px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.rsvp-section h2 {
+  font-family: 'Pacifico', cursive;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.rsvp-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: auto;
+}
+
 .rsvp-section input,
 .rsvp-section select,
 .rsvp-section textarea {
-  padding: 0.9rem 1rem;
+  padding: 0.8rem;
   border-radius: 10px;
-  border: none; /* sur fond sombre, pas de contour dur */
+  border: none;
   font-size: 1rem;
-  color: var(--text);     /* texte foncé à l’intérieur */
-  background: #fff;       /* champs blancs pour lisibilité */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
 }
+
 .rsvp-section textarea {
   resize: vertical;
   min-height: 80px;
 }
-.rsvp-section .rsvp-button,
+
 .rsvp-section button {
-  background: linear-gradient(135deg, #2ED5A4, var(--jade));
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
   color: white;
   border: none;
   padding: 1rem 2rem;
   font-size: 1.1rem;
   border-radius: 30px;
   cursor: pointer;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-  transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
-.rsvp-section .rsvp-button:hover,
+
 .rsvp-section button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 18px rgba(0,0,0,0.28);
-  filter: brightness(1.06);
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
 
-/* === Footer === */
-footer {
-  background-color: var(--jade-light);
-  padding: 1rem 1.2rem;
-  text-align: center;
-  border-top: 1px solid rgba(0,168,107,0.15);
-  color: var(--text);
-}
-
-/* === Accessibilité / petits plus === */
-.btn:focus,
-button:focus,
-input:focus,
-select:focus,
-textarea:focus {
-  outline: 3px solid rgba(0,168,107,0.35);
-  outline-offset: 2px;
-}
-::placeholder { color: #7aa99b; }
-
-/* === Responsive === */
-@media (max-width: 900px) {
-  .overlay h1 { font-size: 2.8rem; }
-  .overlay p { font-size: 1.2rem; }
-}
+/* Responsive */
 @media (max-width: 600px) {
-  .overlay h1 { font-size: 2.2rem; }
-  .overlay p { font-size: 1.05rem; padding: 0 0.5rem; }
-  section { margin: 1.2rem auto; padding: 2rem 1rem; border-radius: 12px; }
-  .details .info-cards { flex-direction: column; }
-  .btn { padding: 0.7rem 1.2rem; font-size: 0.95rem; }
-  .map iframe { height: 260px; }
-  .rsvp-section { padding: 2rem 1rem; border-radius: 12px; }
-  .rsvp-section h2 { font-size: 1.5rem; margin-bottom: 1.2rem; }
-  .rsvp-section .rsvp { width: 100%; gap: 0.8rem; }
+  .overlay h1 {
+    font-size: 2.5rem;
+  }
+
+  .overlay p {
+    font-size: 1.5rem;
+  }
+
+  .details .info-cards {
+    flex-direction: column;
+  }
+
+  .btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  iframe {
+    height: 250px;
+  }
+
+  .rsvp-section {
+    padding: 2rem 1rem;
+    border-radius: 0;
+    background-position: center top;
+  }
+
+  .rsvp-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .rsvp-section form {
+    width: 100%;
+    gap: 0.8rem;
+  }
+
   .rsvp-section input,
   .rsvp-section select,
-  .rsvp-section textarea { font-size: 1rem; padding: 0.75rem; }
-  .rsvp-section .rsvp-button,
-  .rsvp-section button { font-size: 1rem; padding: 0.9rem 1.4rem; }
+  .rsvp-section textarea {
+    font-size: 1rem;
+    padding: 0.7rem;
+  }
+
+  .rsvp-section button {
+    font-size: 1rem;
+    padding: 0.9rem 1.5rem;
+  }
 }
