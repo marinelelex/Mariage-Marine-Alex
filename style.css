@@ -1,14 +1,34 @@
+
+/* ==== Thème Jade ====
+   Palette:
+   Jade: #00A86B
+   Jade profond: #0E8F66
+   Jade clair: #E6F7F2
+   Texte: #233
+   Accent corail: #FF7F50 (option: #2ED5A4)
+*/
+
+:root {
+  --jade: #00A86B;
+  --jade-deep: #0E8F66;
+  --jade-light: #E6F7F2;
+  --text: #233;
+  --accent: #FF7F50; /* Remplace par #2ED5A4 si tu veux tout-vert */
+}
+
 body {
   margin: 0;
   font-family: 'Pacifico', cursive;
-  background-color: #fff8f0;
-  color: #333;
+  background-color: var(--jade-light); /* fond plus jade, très clair */
+  color: var(--text);
 }
 
 h1, h2, h3, h4, h5 {
   font-family: 'Pacifico', cursive;
+  color: var(--jade-deep);
 }
 
+/* Hero: si tu gardes la photo, on teinte l’overlay en jade */
 .hero {
   position: relative;
   height: 100vh;
@@ -19,7 +39,8 @@ h1, h2, h3, h4, h5 {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background-color: rgba(0,0,0,0.35);
+  /* Teinte jade + légère opacité pour lisibilité */
+  background-color: rgba(14, 143, 102, 0.35); /* var(--jade-deep) avec alpha */
   color: white;
   display: flex;
   flex-direction: column;
@@ -32,6 +53,7 @@ h1, h2, h3, h4, h5 {
 .overlay h1 {
   font-size: 3.5rem;
   line-height: 1.2;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.35); /* meilleure lisibilité sur photo */
 }
 
 .overlay h5 {
@@ -43,21 +65,22 @@ h1, h2, h3, h4, h5 {
   font-size: 1.5rem;
 }
 
+/* Bouton principal (héritait du corail) -> version jade */
 .btn {
   margin-top: 1.5rem;
   padding: 0.8rem 1.5rem;
-  background-color: #ff7f50;
+  background-color: var(--jade);
   color: white;
   border-radius: 30px;
   text-decoration: none;
   font-weight: bold;
   border: none;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s, transform 0.1s;
 }
-
 .btn:hover {
-  background-color: #ff5a2e;
+  background-color: var(--jade-deep);
+  transform: translateY(-1px);
 }
 
 section {
@@ -67,21 +90,24 @@ section {
   text-align: center;
 }
 
+/* Cartes infos -> dégradé jade doux */
 .details .info-cards {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
 }
-
 .details .info-cards div {
-  background: linear-gradient(135deg, #ffefd5, #ffe4b5);
+  background: linear-gradient(135deg, #f0fffa, var(--jade-light)); /* du très clair vers jade clair */
+  border: 1px solid rgba(0, 168, 107, 0.15); /* liseré jade */
   padding: 1.5rem;
   border-radius: 10px;
   flex: 1;
   min-width: 250px;
+  color: var(--text);
 }
 
+/* Formulaire */
 .rsvp form {
   display: flex;
   flex-direction: column;
@@ -92,33 +118,37 @@ section {
 
 input, select, textarea, button {
   padding: 0.8rem;
-  border: 1px solid #ccc;
+  border: 1px solid #b7e7d8; /* contour jade pâle */
   border-radius: 5px;
   font-size: 1rem;
 }
 
+/* Bouton secondaire (RSVP) -> gradient jade */
 button {
-  background-color: #20b2aa;
+  background: linear-gradient(135deg, var(--jade), var(--jade-deep));
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s, transform 0.1s;
 }
-
 button:hover {
-  background-color: #1a928f;
+  background: linear-gradient(135deg, var(--jade-deep), #087454);
+  transform: translateY(-1px);
 }
 
+/* Footer en jade très clair */
 footer {
-  background-color: #ffe4b5;
+  background-color: var(--jade-light);
   padding: 1rem;
   text-align: center;
+  border-top: 1px solid rgba(0, 168, 107, 0.15);
 }
 
-/* RSVP Section style */
+/* ==== RSVP Section (fond uni jade au lieu de la photo) ==== */
+/* Si tu veux garder la photo, commente ce bloc et remets ton URL */
 .rsvp-section {
-  background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover no-repeat;
+  background: radial-gradient(120% 120% at 20% 10%, #18b789 0%, var(--jade-deep) 60%, #066c4e 100%);
   padding: 3.5rem 1rem;
   border-radius: 20px;
   color: white;
@@ -132,7 +162,7 @@ footer {
   font-family: 'Pacifico', cursive;
   font-size: 2rem;
   margin-bottom: 2rem;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.35);
 }
 
 .rsvp-section form {
@@ -150,6 +180,7 @@ footer {
   border-radius: 10px;
   border: none;
   font-size: 1rem;
+  color: var(--text);
 }
 
 .rsvp-section textarea {
@@ -158,7 +189,7 @@ footer {
 }
 
 .rsvp-section button {
-  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  background: linear-gradient(135deg, #2ED5A4, var(--jade)); /* accent vert menthe -> jade */
   color: white;
   border: none;
   padding: 1rem 2rem;
@@ -168,7 +199,6 @@ footer {
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   transition: transform 0.2s, box-shadow 0.2s;
 }
-
 .rsvp-section button:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 12px rgba(0,0,0,0.2);
@@ -176,52 +206,32 @@ footer {
 
 /* Responsive */
 @media (max-width: 600px) {
-  .overlay h1 {
-    font-size: 2.5rem;
-  }
+  .overlay h1 { font-size: 2.5rem; }
+  .overlay p { font-size: 1.5rem; }
 
-  .overlay p {
-    font-size: 1.5rem;
-  }
-
-  .details .info-cards {
-    flex-direction: column;
-  }
+  .details .info-cards { flex-direction: column; }
 
   .btn {
     padding: 0.6rem 1rem;
     font-size: 0.9rem;
   }
 
-  iframe {
-    height: 250px;
-  }
+  iframe { height: 250px; }
 
   .rsvp-section {
     padding: 2rem 1rem;
     border-radius: 0;
     background-position: center top;
   }
-
   .rsvp-section h2 {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
   }
-
-  .rsvp-section form {
-    width: 100%;
-    gap: 0.8rem;
-  }
-
+  .rsvp-section form { width: 100%; gap: 0.8rem; }
   .rsvp-section input,
   .rsvp-section select,
   .rsvp-section textarea {
-    font-size: 1rem;
-    padding: 0.7rem;
+    font-size: 1rem; padding: 0.7rem;
   }
-
-  .rsvp-section button {
-    font-size: 1rem;
-    padding: 0.9rem 1.5rem;
-  }
+  .rsvp-section button { font-size: 1rem; padding: 0.9rem 1.5rem; }
 }
