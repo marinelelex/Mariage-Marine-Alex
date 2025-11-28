@@ -21,9 +21,14 @@ body {
   color: var(--text);
 }
 
-h1, h2, h3, h4, h5 {
+h1, h3, h4, h5 {
   font-family: 'Pacifico', cursive;
   color: var(--jade-deep);
+}
+
+h2 {
+  font-family: 'Pacifico', cursive;
+  color: var(--text);
 }
 
 /* Hero avec photo naturelle */
