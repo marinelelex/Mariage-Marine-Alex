@@ -60,7 +60,7 @@ h1, h2, h3, h4, h5 {
   top: 0; left: 0;
   width: 100%; height: 100%;
   background-color: var(--jade-light);
-  color: var(--text);
+  color: WHITE;
   display: flex;
   flex-direction: column;
   justify-content: center;
