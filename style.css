@@ -1,7 +1,7 @@
 body {
+  background-color: #b3cdac;
   margin: 0;
   font-family: 'Pacifico', cursive;
-  background-color: #b3cdac;
   color: #333;
 }
 
@@ -75,7 +75,7 @@ section {
 }
 
 .details .info-cards div {
-  background: linear-gradient(135deg, #ffefd5, #ffe4b5);
+  background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
   padding: 1.5rem;
   border-radius: 10px;
   flex: 1;
