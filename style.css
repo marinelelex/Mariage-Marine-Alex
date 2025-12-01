@@ -39,10 +39,9 @@
 
 body {
   margin: 0;
-  background-color: var(--jade);
-  color: var(--text);
   font-family: 'Pacifico', cursive;
-
+  background-color: #fff8f0;
+  color: #333;
 }
 
 h1, h2, h3, h4, h5 {
